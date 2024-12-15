@@ -30,10 +30,14 @@ class LinkedList {
     //display all data in the list
     displayAllData() {
         let node = this.head;
+        let str = '';
         while (node) {
-            console.log(node.data);
+            str += "(" + node.data + ") -> ";
             node = node.next;
+            if (node == null)
+                str += 'null';
         }
+        console.log(str);
     }
 }
 
