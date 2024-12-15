@@ -10,4 +10,10 @@ class LinkedList {
         this.head = null;
         this.size = 0;
     }
+
+    //insert node at first
+    insertAtFirst(data) {
+        this.head = new Node(data, this.head);
+        this.size++;
+    }
 }
