@@ -58,7 +58,15 @@ class LinkedList {
         }
         return node;
     }
-    
+
+    //remove last node
+    removeLastNode() {
+        let node = this.head;
+        while (node.next.next) {
+            node = node.next;
+        }
+        node.next = null
+    }
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -82,12 +90,15 @@ ll.insertAtEnd(500);
 let size = ll.getSize();
 console.log(size)
 
+let someNode = ll.getNodeAt(2);
+console.log(someNode);
+
 let firstNode = ll.getFirstNode();
 console.log(firstNode); 
 let lastNode = ll.getLastNode();
 console.log(lastNode);
 
-let someNode = ll.getNodeAt(2);
-console.log(someNode);
+
+ll.removeLastNode();
 
 ll.displayAllData();
