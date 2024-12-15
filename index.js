@@ -156,6 +156,7 @@ ll.insertAtFirst(200);
 ll.insertAtEnd(400);
 ll.insertAtEnd(500);
 
+/*
 let size = ll.getSize();
 console.log(size)
 
@@ -174,4 +175,5 @@ console.log(ll.indexOf(500))
 console.log(ll.indexOf(400))
 ll.insertAtIndex(500, 3);
 ll.removeAtIndex(2);
+*/
 ll.displayAllData();
