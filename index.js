@@ -66,6 +66,7 @@ class LinkedList {
             node = node.next;
         }
         node.next = null
+        this.size--;
     }
 
     //returns true if the passed data is in the list
@@ -92,6 +93,49 @@ class LinkedList {
         return null;
     }
 
+    //insert at the given index
+    insertAtIndex(data, index) {
+        if ((index < 0) || (index > (size-1))) 
+            return;
+
+        let node = this.head;
+        if (index == 0) {
+            this.insertAtFirst(data);
+        } else if (index == size) {
+            this.insertAtEnd(data)
+        } else {
+            for (let i = 0; i < (index-1); i++) {
+                node = node.next;
+            }
+            node.next = new Node(data, node.next);
+        }
+        this.size++;
+    }
+
+
+    //remove node at the given index
+    removeAtIndex(index) {
+        if ((index < 0) || (index > (size-1))) 
+            return;  
+        
+        if (index == 0) {
+            let firstNode = this.head;
+            this.head = firstNode.next;
+            this.size--;
+        } else if (index == (size-1)) {
+            this.removeLastNode();
+        } else {
+            let PreviousNode = this.head;
+            let NodeToDelete;
+            for (let i = 1; i < index; i++) {
+                PreviousNode = PreviousNode.next
+            }
+            NodeToDelete = PreviousNode.next;
+            PreviousNode.next = NodeToDelete.next;
+            this.size--;
+        }
+
+    } 
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -128,5 +172,6 @@ ll.removeLastNode();
 console.log(ll.contains(500));
 console.log(ll.indexOf(500))
 console.log(ll.indexOf(400))
-
+ll.insertAtIndex(500, 3);
+ll.removeAtIndex(2);
 ll.displayAllData();
