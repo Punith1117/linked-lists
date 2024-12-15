@@ -27,6 +27,11 @@ class LinkedList {
         this.size++;
     }
 
+    //get total number of nodes in the list
+    getSize() {
+        return this.size;
+    }
+    
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -46,4 +51,6 @@ ll.insertAtFirst(300);
 ll.insertAtFirst(200);
 ll.insertAtEnd(400);
 ll.insertAtEnd(500);
+let size = ll.getSize();
+console.log(size)
 ll.displayAllData();
