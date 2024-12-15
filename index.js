@@ -67,6 +67,31 @@ class LinkedList {
         }
         node.next = null
     }
+
+    //returns true if the passed data is in the list
+    contains(data) {
+        let node = this.head;
+        while (node) {
+            if (node.data == data)
+                return true
+            node = node.next;
+        }
+        return false
+    }
+
+    //fing the index of the data
+    indexOf(data) {
+        let node = this.head;
+        let count = 0;
+        while(node) {
+            if (node.data == data)
+                return count;
+            count++;
+            node = node.next;
+        }
+        return null;
+    }
+
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -98,7 +123,10 @@ console.log(firstNode);
 let lastNode = ll.getLastNode();
 console.log(lastNode);
 
-
+console.log(ll.contains(500));
 ll.removeLastNode();
+console.log(ll.contains(500));
+console.log(ll.indexOf(500))
+console.log(ll.indexOf(400))
 
 ll.displayAllData();
