@@ -26,4 +26,20 @@ class LinkedList {
         node.next = new Node(data);
         this.size++;
     }
+
+    //display all data in the list
+    displayAllData() {
+        let node = this.head;
+        while (node) {
+            console.log(node.data);
+            node = node.next;
+        }
+    }
 }
+
+let ll = new LinkedList();
+ll.insertAtFirst(300);
+ll.insertAtFirst(200);
+ll.insertAtEnd(400);
+ll.insertAtEnd(500);
+ll.displayAllData();
