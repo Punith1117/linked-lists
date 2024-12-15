@@ -31,7 +31,21 @@ class LinkedList {
     getSize() {
         return this.size;
     }
-    
+
+    //get first node
+    getFirstNode() {
+        return this.head;
+    }
+
+    //get last node
+    getLastNode() {
+        let node = this.head;
+        while (node.next) {
+            node = node.next;
+        }
+        return node;
+    }
+
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -51,6 +65,13 @@ ll.insertAtFirst(300);
 ll.insertAtFirst(200);
 ll.insertAtEnd(400);
 ll.insertAtEnd(500);
+
 let size = ll.getSize();
 console.log(size)
+
+let firstNode = ll.getFirstNode();
+console.log(firstNode); 
+let lastNode = ll.getLastNode();
+console.log(lastNode);
+
 ll.displayAllData();
