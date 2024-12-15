@@ -46,6 +46,19 @@ class LinkedList {
         return node;
     }
 
+    //get node at some index
+    getNodeAt(index) {
+        if ((index < 0) || (index > (size-1)))
+            return null;
+        let count = 0; 
+        let node = this.head;
+        while (count < index) {
+            node = node.next
+            count++;
+        }
+        return node;
+    }
+    
     //display all data in the list
     displayAllData() {
         let node = this.head;
@@ -73,5 +86,8 @@ let firstNode = ll.getFirstNode();
 console.log(firstNode); 
 let lastNode = ll.getLastNode();
 console.log(lastNode);
+
+let someNode = ll.getNodeAt(2);
+console.log(someNode);
 
 ll.displayAllData();
